@@ -1,0 +1,576 @@
+/* 
+     ___          ___                   ___          ___     
+    /  /\        /  /\     __          /  /\        /  /\    
+   /  /::|      /  /::\   |  |\       /  /::\      /  /::\   
+  /  /:|:|     /  /:/\:\  |  |:|     /  /:/\:\    /  /:/\:\  
+ /  /:/|:|__  /  /::\ \:\ |  |:|    /  /:/  \:\  /  /::\ \:\ 
+/__/:/_|::::\/__/:/\:\_\:\|__|:|__ /__/:/ \__\:\/__/:/\:\_\:\
+\__\/  /~~/:/\__\/  \:\/://  /::::\\  \:\ /  /:/\__\/~|::\/:/
+      /  /:/      \__\:://  /:/~~~~ \  \:\  /:/    |  |:|::/ 
+     /  /:/       /  /://__/:/       \  \:\/:/     |  |:|\/  
+    /__/:/       /__/:/ \__\/         \  \::/      |__|:|~   
+    \__\/        \__\/                 \__\/        \__\|    
+      
+      ////////////////////////////////////////////
+      //                                        //
+      //      HTML5 CSS3 Capstone Project       //
+      //               WDD7 - 2020              //
+      //           Capstone Project(MO2)        //
+      //          Instructor: Brent Scott       //
+      //                                        //
+      ////////////////////////////////////////////
+
+*/
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+  color: #fff;
+}
+
+/*Body declaration on the Fonts, font-size and font-weigh*/
+body{
+  font-family: Cabin, Tahoma, Helvetica, 'Open Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 0; 
+  background-color: #666;
+  background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/binary_.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  background-position: center center;
+  background-attachment: fixed;
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+/*Container declaration on color and width*/
+#container, #inner_container{ 
+  /*max-width: 960px;*/
+  margin: 0 auto;
+}
+
+#navcontainer{
+  margin: 0 auto;
+  max-width: 960px; 
+}
+
+div #inner_container{
+  z-index:1;
+  background: rgba(0,0,0,0.7);
+  height: 85px;
+  width: 100%;
+  position: fixed;
+  
+}
+
+#nav_list{ 
+  max-width: 960px; 
+  margin: 0 auto; 
+  background-color: transparent; 
+}
+
+/*Wrapper declaration on color and width*/
+#wrapper{ 
+  max-width: 960px; 
+  margin: 0 auto; 
+  padding-top: 90px;
+  background-color: transparent; 
+}
+
+/*Header declaration on background and Height*/
+header{
+  height: calc(100vh - 300px);
+  background-color: #fdd;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/bg4.jpg);
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  background-size: cover;
+  
+  background-position: center center;
+  width: 100%;
+  padding-top: 1px;
+  text-align: center;
+}
+
+/*Header content properties declaration for Home page*/
+#home_header{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/*Header content properties declaration for other pages*/
+#header_content{
+  height: calc(100vh - 500px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header_content h1{
+  font-family: Roboto, Arial, Helvetica, 'Open Sans', sans-serif;
+  font-weight: 700;
+  cursor: pointer;
+  text-shadow: 1px 1px 1px #919191,
+  1px 1px 1px #919191,
+  1px 2px 1px #919191,
+  1px 3px 1px #919191,
+  1px 4px 1px #919191,
+  1px 5px 1px #919191,
+  1px 6px 1px #919191,
+  1px 7px 1px #919191,
+  1px 8px 1px #919191,
+  1px 9px 1px #919191,
+  1px 10px 1px #919191,
+  1px 18px 6px rgba(16,16,16,.4),
+  1px 22px 10px rgba(16,16,16,.2),
+  1px 25px 35px rgba(16,16,16,.2),
+  1px 30px 60px rgba(16,16,16,.4);
+  transition: 0.8s all;
+}
+
+#header_content h1:hover{
+  text-shadow: 1px 0px 6px rgba(16,16,16,.4),
+              1px 0px 10px rgba(16,16,16,.2),
+              1px 0px 35px rgba(16,16,16,.2),
+              1px 0px 60px rgba(16,16,16,.4);
+}
+
+#header_content h1 span{
+  color: #0048ff;
+}
+
+/*Navigation declaration on background and Height*/
+nav{
+  /*background: rgba(0,0,0,0.7);
+  height: 85px;
+  width: 100%;
+  position: fixed;*/
+  
+  width: 100%;
+  position: relative;
+  perspective: 1000px;
+  perspective-origin: 100% 100%;
+  top: 0;
+  right: 0;
+}
+
+/*Logo Declaration*/
+.logo{
+  margin: 1px 12px;
+  height: 84px;
+  float: left;
+}
+
+/*Unordered List Menu*/
+nav ul{
+  float: right;
+  margin-left: 20px;
+}
+
+nav ul li{
+  /* You can set block elements like LI to "inline", but these will 
+  not be able to use any "box" properties like width, height, padding,
+  or margin. inline-block is better, because we can make them line up
+  like inline elements do, but now we can give them "block/box" 
+  properties */
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a{
+  color: #fff;
+  font-size: 17px;
+  padding-top: 7px;
+  padding-right: 13px;
+  padding-bottom: 7px;
+  padding-left: 13px;
+  border-radius: 3px;
+  border-bottom: 1px solid #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+
+a.active, a:hover{
+  background: #0048ff;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}/*Navigation Declaration Ends here*/
+
+/*Declaration for the Banner Text in the Header Section*/
+.banner{
+  /*position: absolute;
+  top: 35%;
+  text-align: center;
+  left: 25%;
+  width: 100%;
+  margin-top: 15%;*/
+  font-family: Roboto, Arial, Helvetica, 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.banner h2{
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+  color: #fff;
+}
+
+.banner h1{
+  margin: 0;
+  padding: 0;
+  color: #fff;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.5);
+}
+
+.banner h1 span{
+  color: #0048ff;
+}
+
+.banner h1 span:after{
+  content: '';
+  animation: animate infinite 8s;
+}
+
+.banner p{
+  color: #fff;
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.banner a{
+  border: 1px solid #1b9bff;
+  padding: 10px 25px;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+@keyframes animate{
+  0%{
+    content: ', Software Engineer';
+  }
+  20%{
+    content: ', Technical Consultant';
+  }
+  40%{
+    content: ', Graphics Designer';
+  }
+  60%{
+    content: ', Content Creator';
+  }
+  80%{
+    content: ', Footballer';
+  }
+  0%{
+    content: ', Marathoner';
+  }
+}
+
+#home_section p{
+  letter-spacing: 1px;
+   margin: 10px;
+}
+
+
+/*About Us starts Here*/
+/*Author image properties*/
+#author{
+  width: 200px;
+  height: 200px;
+  background: url(../images/author.jpg);
+  background-size: cover;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle();
+  margin: 60px 30px 30px 0;
+}
+
+#about_content p{
+  letter-spacing: 1px;
+  margin: 10px;
+}
+
+
+/*Portfolio starts Here*/
+/*Portfolio content properties and declaration*/
+#portfolio_content{
+  margin: 14px auto 0;
+  padding: 5px;
+  /*display: flex;*/
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/*Portfolio project image section declaration */
+#portfolio_content .project_img{
+  position: relative;
+  width: 207px;
+  height: 119px;
+  margin: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  
+}
+.project_img .imagebox{
+  position: relative;
+  overflow: hidden;
+  border-radius: 150px 20px 30px 23px;
+}
+.project_img .imagebox img{
+  max-width: 100%;
+  -webkit-transition: transform .2s;
+  transition: transform .2s;
+}
+
+.project_img:hover .imagebox img{
+  -webkit-transform: scale(1.5,1.5);
+  transform: scale(1.5,1.5);
+}
+
+/*Portfolio details properties*/
+.project_img .details{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+  background: rgba(0,0,0,.8);
+  -webkit-transform: scaleY(0);
+  transform: scaleY(0);
+  -webkit-transition: transform .5s;
+  transition: transform .5s;
+}
+
+.project_img:hover .details{
+  -webkit-transform: scaleY(1);
+  transform: scaleY(1);
+}
+
+.project_img .details .content{
+  position: absolute;
+  top: 50%;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  text-align: center;
+  padding: 15px;
+  
+}
+.project_img .details .content h2{
+  color: #0048ff;
+  
+}
+.project_img .details .content p{
+  padding: 10px 0 0;
+  
+}
+#portfolio_content a:hover {
+  background: #0048fd38;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}/*Portfolio declaration ends here*/
+
+
+/*Services Declaration starts Here*/
+/*Service Content properties*/
+.services_content{
+  /*display: flex;*/
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/*Service box properties declaration and positioning*/
+.services_content .service_box{
+  /*position: relative;*/
+  background: #0048ff;
+  padding: 20px 40px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/*Service boxes background and shapes*/
+.services_content .service_box:nth-child(1){
+  background: linear-gradient(46deg, #036eb7, #64eaff);
+  border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+}
+.services_content .service_box:nth-child(2){
+  background: linear-gradient(46deg, #e91e63, #ed55ff);
+  border-radius: 80% 30% 50% 50%/50%;
+}
+.services_content .service_box:nth-child(3){
+  background: linear-gradient(46deg, #086d35, #00ff72);
+  border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
+}
+.services_content .service_box:nth-child(4){
+  background: linear-gradient(46deg, #f05a4f, #f43030);
+  border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+}
+.services_content .service_box:nth-child(5){
+  background: linear-gradient(46deg, #036eb7, #00ff72);
+  border-radius: 50%;
+}
+.services_content .service_box:nth-child(6){
+  background: linear-gradient(46deg, #f05a4f, #0048ff);
+  border-radius: 80% 30% 50% 50%/50%;
+}
+.services_content .service_box:nth-child(7){
+  background: linear-gradient(46deg, #036eb7, #64eaff);
+  border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+}
+.services_content .service_box:nth-child(8){
+  background: linear-gradient(46deg, #e91e63, #ed55ff);
+  border-radius: 80% 30% 50% 50%/50%;
+}
+.services_content .service_box:nth-child(9){
+  background: linear-gradient(46deg, #086d35, #00ff72);
+  border-radius: 40% 40% 50% 40%/30% 50% 50% 50%;
+}
+.services_content .service_box:nth-child(10){
+  background: linear-gradient(46deg, #f05a4f, #f43030);
+  border-radius: 50% 50% 50% 70%/50% 50% 70% 60%;
+}
+
+
+/*Contact Us Starts here*/
+/*Fieldset Property Declaration */
+form#infoForm fieldset{
+  border: 2px solid #000;
+  border-radius: 10px;
+  margin: 0;
+  padding-bottom: 5px;
+  font-family: Roboto, Arial, Helvetica, 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/*Input field font Properties*/
+form#infoForm fieldset input, textarea{
+  font-family: Roboto, Arial, Helvetica, 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;  
+  font-size: 16px;
+  font-weight: 400;
+  color: #000;  
+}
+
+/*Label field font Properties*/
+form#infoForm div#info label{
+  display: block;
+  float: left;
+  clear: both;  
+  width: 150px;
+  color: #fff;
+}
+
+/*Alignments of forms first name, last name etc.*/
+form#infoForm div#info input, textarea{
+  padding: 7px 12px;
+  -moz-box-shadow: inset 2px 6px 8px rgba(0,0,0,0.6);
+  -webkit-box-shadow: inset 2px 6px 8px rgba(0,0,0,0.6);
+  box-shadow: inset 2px 6px 8px rgba(0,0,0,0.6);
+}
+
+#info p{
+  padding-bottom: 40px;
+}
+
+/*Form Lagend Declaration and properties*/
+form#infoForm legend{
+  background-color: #000;
+  border: 2px solid #222;
+  color: #fff;
+  border-radius: 5px;
+  text-align: center;  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 700;
+}
+      
+/*Button Alignment and Properties */
+form#infoForm p.buttons input{
+  float: right;
+  color: #fff;
+  background-color: #0048ff;
+  border-color: #222;
+  margin-right: 10px;
+  margin-bottom: 5px;
+  padding: 10px 40px;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+/*Button Hover Properties*/
+form#infoForm p.buttons input:hover{
+  background-color: #fff;
+  color: #000;
+}/*End of Form Declaration*/
+
+/*Info Table Declaration*/
+#info_table table{
+  border: 2px solid transparent;
+  border-spacing: 0px;
+  border-collapse: collapse; 
+  margin-left: 20px;
+  margin-top: 40px;
+  width: 47%;
+  margin: 0 auto;
+}
+#info_table tr{
+  vertical-align: bottom;
+}
+#info_table th, #info_table td{
+  border-bottom: 2px solid #000;
+  padding: 25px;
+}
+#info_table th{
+  text-align: left;
+}
+#info_table td{
+  text-align: right;
+}/*Contat Us declaration ends here*/
+
+
+/*Marks Starts here*/
+/*Marks Header declaration*/
+
+
+/*General Secction Declaration*/
+section{
+  background: rgba(0,0,0,0.7);
+  height: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-top: 14px;
+}
+
+
+/*General Footer Declaration*/
+footer{
+  height: 90px;
+  clear: both;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  background-color: #333;
+  vertical-align: middle;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  text-align: center;
+  position: relative;
+}

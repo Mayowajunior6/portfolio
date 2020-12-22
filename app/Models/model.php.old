@@ -1,0 +1,156 @@
+<?php
+
+/**
+ * DB Function Page
+ * @file: model.php
+ * @author: Mayowa Ajamu <mayowajunior6@gmail.com, ajamu-m@webmail.uwinnipeg.ca>
+ * @updated_at: 08-25-2020
+ */
+
+/**
+ * save a user in database table
+ * @param  array $user $_POST values
+ * @param  Object $dbh  [description]
+ * @return Int Last Insert Id
+ */
+function saveUser($user, $dbh) :int
+{
+
+    	// 2. Create query
+        // Break query into multiple lines to
+        // make debugging easier in the case 
+        // of errors
+        $query = "INSERT INTO users
+                    (
+                    first_name, 
+                    last_name, 
+                    street,
+                    city,
+                    postal_code,
+                    province,
+                    country,
+                    phone,
+                    email,
+                    age, 
+                    password
+                    ) 
+                    VALUES 
+                    (
+                    :first_name, 
+                    :last_name, 
+                    :street,
+                    :city,
+                    :postal,
+                    :province,
+                    :country,
+                    :phone,
+                    :email,
+                    :age, 
+                    :password
+                )";
+
+        // 3. Prepare the query to be executed
+        $stmt = $dbh->prepare($query);
+
+
+        // 4. Bind values safely (escaped) to place holders 
+        $params = array(
+        	':first_name' => $user['first_name'], 
+            ':last_name' => $user['last_name'], 
+            ':street' => $user['street'],
+            ':city' => $user['city'],
+            ':postal' => $user['postal'],
+            ':province' => $user['province'],
+            ':country' => $user['country'],
+            ':phone' => $user['phone'],
+            ':email' => $user['email'],
+            ':age' => $user['age'], 
+            ':password' => password_hash($user['password'], PASSWORD_DEFAULT)
+        );
+
+
+        // 5. execute
+        $stmt->execute($params);
+
+        return $dbh->lastInsertId();
+
+}
+
+/**
+ * Get a user based on primary key
+ * @param  integer $user_id primary key
+ * @param  object $dbh  database handle
+ * @return array the user
+ */
+function getUser($user_id, $dbh) :array
+{
+
+    // Create the query
+    $query = "SELECT * FROM users WHERE id = :user_id";
+
+    // Prepare the query
+    $stmt = $dbh->prepare($query);
+
+    // Bind the parameter(s)
+    $params = array(
+        ':user_id' => $user_id
+    );
+
+    // Execute the query
+    $stmt->execute($params);
+
+    // Fetch the results
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+
+}
+
+/**
+ * Authenticating user with checking the email
+ * @param  interger $user
+ * @param  object $dbh
+ * @return array OR boolean the user
+ */
+function authUser($user, $dbh)
+{
+    // Create the query
+    $query = "SELECT * FROM users WHERE email = :user_email";
+
+    // Prepare the query
+    $stmt = $dbh->prepare($query);
+
+    // Bind the parameter(s)
+    $params = array(
+        ':user_email' => $user['email']
+    );
+
+    // Execute the query
+    $stmt->execute($params);
+
+    // Fetch the results
+    return $stmt->fetch(PDO::FETCH_ASSOC);
+}
+
+/**
+ * Checking if email exist
+ * @param  interger $user
+ * @param  object $dbh
+ * @return int
+ */
+function checkEmail($user, $dbh)
+{
+    // Create the query
+    $query = "SELECT * FROM users WHERE email = :user_email";
+
+    // Prepare the query
+    $stmt = $dbh->prepare($query);
+
+    // Bind the parameter(s)
+    $params = array(
+        ':user_email' => $user['email']
+    );
+
+    // Execute the query
+    $stmt->execute($params);
+
+    return $stmt->rowCount();
+}

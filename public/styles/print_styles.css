@@ -1,0 +1,332 @@
+/* 
+     ___          ___                   ___          ___     
+    /  /\        /  /\     __          /  /\        /  /\    
+   /  /::|      /  /::\   |  |\       /  /::\      /  /::\   
+  /  /:|:|     /  /:/\:\  |  |:|     /  /:/\:\    /  /:/\:\  
+ /  /:/|:|__  /  /::\ \:\ |  |:|    /  /:/  \:\  /  /::\ \:\ 
+/__/:/_|::::\/__/:/\:\_\:\|__|:|__ /__/:/ \__\:\/__/:/\:\_\:\
+\__\/  /~~/:/\__\/  \:\/://  /::::\\  \:\ /  /:/\__\/~|::\/:/
+      /  /:/      \__\:://  /:/~~~~ \  \:\  /:/    |  |:|::/ 
+     /  /:/       /  /://__/:/       \  \:\/:/     |  |:|\/  
+    /__/:/       /__/:/ \__\/         \  \::/      |__|:|~   
+    \__\/        \__\/                 \__\/        \__\|    
+      
+      ////////////////////////////////////////////
+      //                                        //
+      //      HTML5 CSS3 Capstone Project       //
+      //               WDD7 - 2020              //
+      //           Capstone Project(MO2)        //
+      //          Instructor: Brent Scott       //
+      //                                        //
+      ////////////////////////////////////////////
+
+*/
+
+/* 
+     ___          ___                   ___          ___     
+    /  /\        /  /\     __          /  /\        /  /\    
+   /  /::|      /  /::\   |  |\       /  /::\      /  /::\   
+  /  /:|:|     /  /:/\:\  |  |:|     /  /:/\:\    /  /:/\:\  
+ /  /:/|:|__  /  /::\ \:\ |  |:|    /  /:/  \:\  /  /::\ \:\ 
+/__/:/_|::::\/__/:/\:\_\:\|__|:|__ /__/:/ \__\:\/__/:/\:\_\:\
+\__\/  /~~/:/\__\/  \:\/://  /::::\\  \:\ /  /:/\__\/~|::\/:/
+      /  /:/      \__\:://  /:/~~~~ \  \:\  /:/    |  |:|::/ 
+     /  /:/       /  /://__/:/       \  \:\/:/     |  |:|\/  
+    /__/:/       /__/:/ \__\/         \  \::/      |__|:|~   
+    \__\/        \__\/                 \__\/        \__\|    
+      
+      ////////////////////////////////////////////
+      //                                        //
+      //      HTML5 CSS3 Capstone Project       //
+      //               WDD7 - 2020              //
+      //           Capstone Project(MO2)        //
+      //          Instructor: Brent Scott       //
+      //                                        //
+      ////////////////////////////////////////////
+
+*/
+*{
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+/*Body declaration on the Fonts, font-size and font-weigh*/
+body{
+  font-family: Cabin, Tahoma, Helvetica, 'Open Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 400;
+  margin: 0; 
+  height: 100%;
+  width: 100%;
+  overflow: auto;
+}
+
+/*Container declaration on color and width*/
+#container, #inner_container{ 
+  /*max-width: 960px;*/
+  margin: 0 auto;
+}
+
+#navcontainer{
+  margin: 0 auto;
+  max-width: 960px; 
+}
+
+div #inner_container{
+  z-index:1;
+  background: rgba(0,0,0,0.7);
+  height: 85px;
+  width: 100%;
+  position: fixed;
+}
+
+#nav_list{ 
+  max-width: 960px; 
+  display: none;
+}
+
+/*Wrapper declaration on color and width*/
+#wrapper{ 
+  max-width: 960px; 
+  margin: 0 auto; 
+  padding-top: 90px;
+  background-color: transparent; 
+}
+
+/*Header declaration on background and Height*/
+header{
+  width: 100%;
+  padding-top: 1px;
+  text-align: center;
+}
+
+#header_content h1{
+  margin-top: 3%;
+  font-family: Roboto, Arial, Helvetica, 'Open Sans', sans-serif;
+  font-weight: 700;
+}
+
+
+/*Navigation declaration on background and Height*/
+
+/*Logo Declaration*/
+.logo{
+  margin: 1px 12px;
+  height: 84px;
+  float: left;
+}
+
+/*Navigation Declaration Ends here*/
+
+/*Declaration for the Banner Text in the Header Section*/
+.banner{
+  /*position: absolute;
+  top: 35%;*/
+  text-align: center;
+  /*left: 25%;*/
+  width: 100%;
+  margin-top: 15%;
+  font-family: Roboto, Arial, Helvetica, 'Open Sans', sans-serif;
+  font-weight: 400;
+}
+
+.banner h2{
+  font-size: 40px;
+  margin: 0;
+  padding: 0;
+}
+
+.banner h1{
+  margin: 0;
+  padding: 0;
+  text-shadow: 0 2px 0 rgba(0,0,0,0.5);
+}
+
+.banner p{
+  font-size: 18px;
+  margin: 0;
+  font-weight: 700;
+}
+
+.banner a{
+  padding: 10px 25px;
+  text-transform: uppercase;
+  font-size: 20px;
+  margin-top: 20px;
+  display: inline-block;
+  display: none;
+}
+
+
+#home_section p{
+  letter-spacing: 1px;
+   margin: 10px;
+}
+
+
+#about_content p{
+  letter-spacing: 1px;
+   margin: 10px;
+}
+
+
+/*Portfolio starts Here*/
+/*Portfolio content properties and declaration*/
+#portfolio_content{
+  margin: 14px auto 0;
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/*Portfolio project image section declaration */
+#portfolio_content .project_img{
+  position: relative;
+  width: 211px;
+  height: 119px;
+  margin: 10px;
+  box-sizing: border-box;
+  display: inline-block;
+  
+}
+.project_img .imagebox{
+  position: relative;
+  overflow: hidden;
+  visibility: hidden
+}
+.project_img .imagebox img{
+  max-width: 100%;
+}
+   
+
+/*Portfolio details properties*/
+.project_img .details{
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  bottom: 10px;
+  left: 10px;
+}
+
+.project_img:hover .details{
+  transform: scaleY(1);
+}
+
+.project_img .details .content{
+  position: absolute;
+  top: 50%;
+  text-align: center;
+  padding: 15px;
+  
+}
+
+.project_img .details .content p{
+  padding: 10px 0 0;
+  
+}
+
+/*Services Declaration starts Here*/
+/*Service Content properties*/
+.services_content{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: auto;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-gap: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+/*Service box properties declaration and positioning*/
+.services_content .service_box{
+  /*position: relative;*/
+  padding: 20px 40px 40px;
+  text-align: center;
+  overflow: hidden;
+}
+
+
+/*Services content h3 declaration*/
+.services_content .service_box h3{
+  position: relative;
+  margin: 0;
+  padding: 0;
+  opacity: .4;
+}
+/*Services content h4 declaration*/
+.services_content .service_box h4{
+  margin: 0;
+  padding: 0;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+/*Services content p declaration*/
+.services_content .service_box p{
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+}/*Services declaration ends here*/
+
+
+/*Contact Us Starts here*/
+/*Fieldset Property Declaration */
+form#infoForm fieldset{
+  border-radius: 10px;
+  margin: 0;
+  padding-bottom: 5px;
+  font-family: Roboto, Arial, Helvetica, 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: normal;
+}
+
+/*Input field font Properties*/
+form#infoForm fieldset input, textarea{
+  font-family: Roboto, Arial, Helvetica, 'Open Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  border-radius: 5px;  
+}
+
+/*Label field font Properties*/
+form#infoForm div#info label{
+  display: block;
+  float: left;
+  clear: both;  
+  width: 150px;
+}
+
+/*Form Lagend Declaration and properties*/
+form#infoForm legend{
+  border: 2px solid;
+  border-radius: 5px;
+  text-align: center;  
+  margin: 0 auto;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+
+/*General Secction Declaration*/
+section{
+  height: auto;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+
+/*General Footer Declaration*/
+footer{
+  vertical-align: middle;
+  margin-top: 14px;
+  margin-bottom: 14px;
+  text-align: center;
+  position: relative;
+}
